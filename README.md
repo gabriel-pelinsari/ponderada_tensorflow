@@ -13,9 +13,21 @@
 
 ## Introdução
 
-Este repositório contém a reprodução e análise do tutorial oficial do **TensorFlow** para construção de um modelo **Transformer** aplicado à tradução automática (Inglês → Português).
+Este repositório apresenta a reprodução e análise prática de um modelo Transformer aplicado à tarefa de tradução automática de frases do Português para o Inglês. O trabalho é baseado no tutorial oficial do TensorFlow, mas com adaptações e comentários críticos que visam destacar tanto os aspectos técnicos quanto as limitações do método.
 
-O Transformer é um dos modelos mais relevantes em **Processamento de Linguagem Natural (PLN)**, servindo de base para arquiteturas modernas como BERT, GPT e T5. Este trabalho busca não apenas reproduzir o tutorial, mas também refletir sobre seus pontos fortes, limitações e desempenho em diferentes cenários de hardware (CPU vs GPU).
+O Transformer, introduzido no artigo clássico “Attention is All You Need” (Vaswani et al., 2017), revolucionou o campo de Processamento de Linguagem Natural (PLN) ao substituir arquiteturas recorrentes (RNNs, LSTMs) e convolucionais por um mecanismo de autoatenção (self-attention). Essa inovação permitiu ganhos expressivos em desempenho, paralelismo e capacidade de capturar dependências de longo alcance em sequências de texto, tornando-se a base de modelos amplamente utilizados, como BERT, GPT e T5.
+
+Neste projeto, foi implementada uma versão reduzida do Transformer para fins educacionais, utilizando o dataset TED Talks (Português ↔ Inglês), disponibilizado pelo TensorFlow Datasets. O foco principal foi compreender:
+
+Como o modelo é construído a partir de camadas de embedding, codificação posicional, atenção multi-cabeças e feed-forward.
+
+- Como organizar e treinar um pipeline eficiente de dados com tf.data.
+
+- O impacto do treinamento em diferentes hardwares (CPU vs GPU).
+
+- A importância de técnicas auxiliares, como scheduler de taxa de aprendizado e métricas mascaradas, para garantir estabilidade no aprendizado.
+
+Além de reproduzir traduções automáticas, o projeto inclui visualizações de mapas de atenção, permitindo interpretar como o modelo associa palavras entre os dois idiomas, e a exportação do modelo treinado, viabilizando seu uso em aplicações reais.
 
 ---
 
